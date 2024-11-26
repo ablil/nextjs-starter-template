@@ -53,4 +53,32 @@ input {
       transform: translate(100%, 0%);
     }
   }
+
+  .auth-field {
+    @apply flex flex-col my-8;
+
+    label {
+      @apply capitalize;
+
+      /* automatically add '*' to required fields */
+      &:has(+ input[required]) {
+        &:after {
+          content: "*";
+          @apply px-1 text-red-700;
+        }
+      }
+    }
+
+    input {
+      @apply border-b px-2 border-gray-400 bg-transparent outline-none;
+
+      &:invalid:not(:placeholder-shown) {
+        @apply border-red-400;
+      }
+    }
+  }
+
+  .auth-submit {
+    @apply bg-black dark:bg-white text-white dark:text-black rounded-md w-full;
+  }
 }

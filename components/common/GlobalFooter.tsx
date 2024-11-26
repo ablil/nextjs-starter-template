@@ -11,7 +11,9 @@ const GlobalFooter = () => {
         </span>
         <article className="flex gap-4">
           {AppConfig.footerLinks.map((item) => (
-            <a href={item.link}>{item.label}</a>
+            <a key={item.label} href={item.link}>
+              {item.label}
+            </a>
           ))}
         </article>
       </article>
