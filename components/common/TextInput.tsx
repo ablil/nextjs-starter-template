@@ -1,6 +1,7 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/16/solid"
 import { FC, InputHTMLAttributes } from "react"
 
+/* eslint-disable-next-line */
 const TextInput: FC<InputHTMLAttributes<HTMLInputElement>> = ({ type, className, ...rest }) => {
   return (
     <div className="flex items-center">
