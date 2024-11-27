@@ -4,6 +4,7 @@ import "./globals.css"
 import { AppConfig } from "@/lib/config"
 import StoreProvider from "./StoreProvider"
 import GlobalFooter from "@/components/common/GlobalFooter"
+import PageLoader from "@/components/common/PageLoader"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -37,8 +38,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <StoreProvider>{children}</StoreProvider>
-        <GlobalFooter />
+        <StoreProvider>
+          <PageLoader>
+            {children}
+            <GlobalFooter />
+          </PageLoader>
+        </StoreProvider>
       </body>
     </html>
   )
