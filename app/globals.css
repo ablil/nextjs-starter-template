@@ -22,6 +22,10 @@ body {
 
 button {
   @apply px-4 py-2 hover:opacity-70 capitalize duration-300;
+
+  &:disabled {
+    @apply opacity-70;
+  }
 }
 
 a {
