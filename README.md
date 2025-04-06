@@ -8,7 +8,7 @@ This is a [Next.js](https://nextjs.org) project **template** bootstrapped with [
 
 To use this project as a template for a new project, run the following:
 ```bash
-npx create-next-app --example https://github.com/ablil/nextjs-starter <Your application name>
+npx create-next-app --example https://github.com/ablil/nextjs-starter-template <Your application name>
 ```
 Besides the default dependencies from Nextjs, this template have some extra dependencies, please check [package.json](package.json).
 
