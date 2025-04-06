@@ -10,7 +10,9 @@ const PageLoader: FC<PropsWithChildren> = ({ children }) => {
   }
 
   return (
-    <div className="fixed w-screen h-screen z-50 flex items-center justify-center animate-pulse">initializing ...</div>
+    <div className="fixed w-screen h-screen z-50 flex items-center justify-center animate-pulse">
+      initializing ...
+    </div>
   )
 }
 
