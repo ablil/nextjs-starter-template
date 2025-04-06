@@ -1,3 +1,11 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    "no-duplicate-imports": "error",
+    "no-unused-vars":"error",
+    "no-console":  ["error", {"allow": ["warn", "error"]}],
+    "no-unused-expressions":"warn",
+    "max-lines": ["error", {"max": 200}],
+    "max-params": ["error", {"max": 5}]
+  }
 }
