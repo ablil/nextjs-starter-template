@@ -1,88 +1,109 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+@utility toggle {
+  @apply w-11 h-6 rounded-full bg-slate-300 cursor-pointer relative flex items-center;
 
-button {
-  @apply px-4 py-2 hover:opacity-70 capitalize duration-300;
-
-  &:disabled {
-    @apply opacity-70;
-  }
-}
-
-a {
-  @apply hover:underline capitalize;
-}
-
-input {
-  @apply p-2;
-
-  &.transparent {
-    @apply bg-transparent outline-none border-none;
-  }
-}
-
-@layer components {
-  .toggle {
-    @apply w-11 h-6 rounded-full bg-slate-300 cursor-pointer relative flex items-center;
-
-    .toggle-inner {
-      @apply w-5 h-5 rounded-full bg-white mx-0.5 absolute transition duration-300;
-      transform: translate(0%, 0%);
-    }
+  .toggle-inner {
+    @apply w-5 h-5 rounded-full bg-white mx-0.5 absolute transition duration-300;
+    transform: translate(0%, 0%);
   }
 
-  .toggle[data-checked="true"] {
+  &[data-checked='true'] {
     @apply bg-black dark:bg-green-600;
 
     .toggle-inner {
       transform: translate(100%, 0%);
     }
   }
+}
 
-  .auth-field {
-    @apply flex flex-col my-8;
+@utility auth-field {
+  @apply flex flex-col my-8;
 
-    label {
-      @apply capitalize;
+  label {
+    @apply capitalize;
 
-      /* automatically add '*' to required fields */
-      &:has(+ input[required]) {
-        &:after {
-          content: "*";
-          @apply px-1 text-red-700;
-        }
-      }
-    }
-
-    input {
-      @apply border-b px-2 border-gray-400 bg-transparent outline-none;
-
-      &:invalid:not(:placeholder-shown) {
-        @apply border-red-400;
+    /* automatically add '*' to required fields */
+    &:has(+ input[required]) {
+      &:after {
+        content: '*';
+        @apply px-1 text-red-700;
       }
     }
   }
 
-  .auth-submit {
-    @apply bg-black dark:bg-white text-white dark:text-black rounded-md w-full;
+  input {
+    @apply border-b px-2 border-gray-400 bg-transparent outline-hidden;
+
+    &:invalid:not(:placeholder-shown) {
+      @apply border-red-400;
+    }
+  }
+}
+
+@utility auth-submit {
+  @apply bg-black dark:bg-white text-white dark:text-black rounded-md w-full;
+}
+
+@layer utilities {
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #0a0a0a;
+      --foreground: #ededed;
+    }
+  }
+
+  body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  button {
+    @apply px-4 py-2 hover:opacity-70 capitalize duration-300;
+
+    &:disabled {
+      @apply opacity-70;
+    }
+  }
+
+  a {
+    @apply hover:underline capitalize;
+  }
+
+  input {
+    @apply p-2;
+
+    &.transparent {
+      @apply bg-transparent outline-hidden border-none;
+    }
   }
 }
