@@ -1,3 +1,7 @@
+# Nextjs starter template
+
+[![CI](https://github.com/ablil/nextjs-starter-template/actions/workflows/ci.yaml/badge.svg)](https://github.com/ablil/nextjs-starter-template/actions/workflows/ci.yaml)
+
 This is a [Next.js](https://nextjs.org) project **template** bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
