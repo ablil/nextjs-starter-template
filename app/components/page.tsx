@@ -106,8 +106,15 @@ const ComponentsPage = () => {
           rightIcon={<MagnifyingGlassIcon className="size-4" />}
         />
       </div>
+      <h1 className="uppercase text-xl">titles</h1>
+
       <div>
-        <h1>titles</h1>
+        <h1 className="bigtitle">big title Lorem, ipsum dolor.</h1>
+        <h2 className="title">title Lorem ipsum dolor sit.</h2>
+        <h3 className="subtitle">subtitle Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+        <p className="undertitle">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, possimus.
+        </p>
       </div>
     </main>
   )
