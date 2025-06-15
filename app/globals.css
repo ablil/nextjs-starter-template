@@ -7,6 +7,8 @@
   --color-primary: oklch(62.7% 0.194 149.214); /* bg-green-600 */
   --color-primary-lighter: oklch(72.3% 0.219 149.579); /* bg-green-500 */
   --color-primary-darker: oklch(52.7% 0.154 150.069); /* bg-green-700 */
+
+  --color-input-primary: oklch(21.6% 0.006 56.043); /* bg-stone-800 */
 }
 
 /*
@@ -56,14 +58,6 @@
         content: '*';
         @apply px-1 text-red-700;
       }
-    }
-  }
-
-  input {
-    @apply border-b px-2 border-gray-400 bg-transparent outline-hidden;
-
-    &:invalid:not(:placeholder-shown) {
-      @apply border-red-400;
     }
   }
 }
@@ -127,10 +121,29 @@
   }
 
   input {
-    @apply p-2;
-
-    &.transparent {
-      @apply bg-transparent outline-hidden border-none;
-    }
+    @apply text-sm outline-none p-2;
   }
+
+  input:disabled {
+    @apply cursor-not-allowed;
+  }
+
+  input.underlined, .underlined.input-with-icon {
+    @apply border-b border-b-gray-600;
+  }
+  input.underlined:focus {
+    @apply border-b-gray-400;
+  }
+
+  input.bordered, .boredered.input-with-icon {
+    @apply border-2 border-gray-600 rounded-md;
+  }
+
+  input.filled, .input-with-icon.filled {
+    @apply bg-input-primary;
+  }
+  input.bordered:focus {
+    @apply border-gray-400;
+  }
+
 }
