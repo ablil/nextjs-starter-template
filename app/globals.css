@@ -116,10 +116,6 @@
     @apply flex gap-1 items-center px-2;
   }
 
-  a {
-    @apply hover:underline capitalize;
-  }
-
   input {
     @apply text-sm outline-none p-2;
   }
@@ -146,4 +142,18 @@
     @apply border-gray-400;
   }
 
+  .title {
+    @apply capitalize text-4xl;
+  }
+
+  .bigtitle {
+    @apply capitalize text-5xl;
+  }
+
+  .subtitle {
+    @apply capitalize text-xl;
+  }
+  .undertitle {
+    @apply text-sm opacity-50;
+  }
 }
