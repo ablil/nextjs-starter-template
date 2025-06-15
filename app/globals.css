@@ -3,6 +3,12 @@
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-primary: oklch(62.7% 0.194 149.214); /* bg-green-600 */
+  --color-primary-lighter: oklch(72.3% 0.219 149.579); /* bg-green-500 */
+  --color-primary-darker: oklch(52.7% 0.154 150.069); /* bg-green-700 */
+
+  --color-input-primary: oklch(21.6% 0.006 56.043); /* bg-stone-800 */
 }
 
 /*
@@ -40,33 +46,6 @@
   }
 }
 
-@utility auth-field {
-  @apply flex flex-col my-8;
-
-  label {
-    @apply capitalize;
-
-    /* automatically add '*' to required fields */
-    &:has(+ input[required]) {
-      &:after {
-        content: '*';
-        @apply px-1 text-red-700;
-      }
-    }
-  }
-
-  input {
-    @apply border-b px-2 border-gray-400 bg-transparent outline-hidden;
-
-    &:invalid:not(:placeholder-shown) {
-      @apply border-red-400;
-    }
-  }
-}
-
-@utility auth-submit {
-  @apply bg-black dark:bg-white text-white dark:text-black rounded-md w-full;
-}
 
 @layer utilities {
   :root {
@@ -88,22 +67,74 @@
   }
 
   button {
-    @apply px-4 py-2 hover:opacity-70 capitalize duration-300;
-
-    &:disabled {
-      @apply opacity-70;
-    }
+    @apply px-6 py-2 capitalize text-xs font-bold rounded-xl shadow-xl cursor-pointer duration-300;
   }
 
-  a {
-    @apply hover:underline capitalize;
+  button:disabled {
+    @apply cursor-not-allowed opacity-50;
+    @apply hover:bg-primary;
+  }
+
+  button.filled {
+    @apply bg-primary hover:bg-primary-darker;
+  }
+
+  button.transparent {
+    @apply bg-transparent opacity-85 hover:opacity-100
+  }
+
+  button.outlined {
+    @apply bg-transparent border border-white hover:border-transparent hover:text-white;
+    @apply hover:bg-primary;
+  }
+
+  button.outlined:disabled {
+    @apply border border-gray-600;
+    @apply hover:bg-transparent;
+  }
+
+  button.with-icon {
+    @apply flex gap-1 items-center px-2;
   }
 
   input {
-    @apply p-2;
+    @apply text-sm outline-none p-2;
+  }
 
-    &.transparent {
-      @apply bg-transparent outline-hidden border-none;
-    }
+  input:disabled {
+    @apply cursor-not-allowed;
+  }
+
+  input.underlined, .underlined.input-with-icon {
+    @apply border-b border-b-gray-600;
+  }
+  input.underlined:focus {
+    @apply border-b-gray-400;
+  }
+
+  input.bordered, .boredered.input-with-icon {
+    @apply border-2 border-gray-600 rounded-md;
+  }
+
+  input.filled, .input-with-icon.filled {
+    @apply bg-input-primary;
+  }
+  input.bordered:focus {
+    @apply border-gray-400;
+  }
+
+  .title {
+    @apply capitalize text-4xl;
+  }
+
+  .bigtitle {
+    @apply capitalize text-5xl;
+  }
+
+  .subtitle {
+    @apply capitalize text-xl;
+  }
+  .undertitle {
+    @apply text-sm opacity-50;
   }
 }

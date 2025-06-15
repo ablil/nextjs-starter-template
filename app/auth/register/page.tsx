@@ -1,33 +1,44 @@
-import React from "react"
+import InputWithIcon from "@/components/common/InputWithIcon"
+import { AtSymbolIcon, LockClosedIcon, UserIcon } from "@heroicons/react/16/solid"
 
 export default function RegisterPage() {
   return (
     <form action="register">
-      <header className="text-center text-2xl">Sign Up</header>
+      <header className="bigtitle text-center">sign up</header>
       <main>
-        <div className="auth-field">
-          <label htmlFor="firstname">First Name</label>
-          <input type="text" name="firstname" placeholder="First name" />
+        <div className="grid grid-rows-5 gap-4 my-8">
+          <InputWithIcon
+            leftIcon={<UserIcon className="size-4" />}
+            placeholder="first name"
+            className="bordered filled"
+          />
+          <InputWithIcon
+            leftIcon={<UserIcon className="size-4" />}
+            placeholder="last name"
+            className="bordered filled"
+          />
+          <InputWithIcon
+            leftIcon={<AtSymbolIcon className="size-4" />}
+            placeholder="email name"
+            type="email"
+            className="bordered filled"
+            required={true}
+          />
+          <InputWithIcon
+            leftIcon={<LockClosedIcon className="size-4" />}
+            placeholder="password"
+            type="password"
+            className="bordered filled"
+            required={true}
+          />
+          <button type="submit" className="filled" disabled={true}>
+            sign up
+          </button>
         </div>
-        <div className="auth-field">
-          <label htmlFor="lastname">Last Name</label>
-          <input type="text" name="lastname" placeholder="Last name" />
-        </div>
-        <div className="auth-field">
-          <label htmlFor="email">email</label>
-          <input type="email" required={true} name="email" placeholder="email" />
-        </div>
-        <div className="auth-field">
-          <label htmlFor="password">password</label>
-          <input type="password" required={true} name="password" id="password" placeholder="********" />
-        </div>
-        <button className="auth-submit" type="submit">
-          Sign Up
-        </button>
       </main>
-      <footer className="py-12 text-center">
-        Already have an account ?{" "}
-        <a href="/auth/login" className="underline">
+      <footer className="undertitle text-center">
+        Already have an account ?
+        <a href="/auth/login" className="underline px-1 uppercase">
           Sign In
         </a>
       </footer>
