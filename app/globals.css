@@ -46,25 +46,6 @@
   }
 }
 
-@utility auth-field {
-  @apply flex flex-col my-8;
-
-  label {
-    @apply capitalize;
-
-    /* automatically add '*' to required fields */
-    &:has(+ input[required]) {
-      &:after {
-        content: '*';
-        @apply px-1 text-red-700;
-      }
-    }
-  }
-}
-
-@utility auth-submit {
-  @apply bg-black dark:bg-white text-white dark:text-black rounded-md w-full;
-}
 
 @layer utilities {
   :root {
