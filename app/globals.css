@@ -137,4 +137,19 @@
   .undertitle {
     @apply text-sm opacity-50;
   }
+
+  .debug {
+    @apply border border-red-400;
+  }
+}
+
+@layer components {
+
+  .route {
+    @apply capitalize text-gray-300 hover:text-white block py-1 px-4;
+  }
+
+  .route[data-selected='true'] {
+    @apply text-white;
+  }
 }
