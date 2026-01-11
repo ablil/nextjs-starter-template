@@ -16,6 +16,20 @@ Besides the default dependencies from Nextjs, this template have some extra depe
 
 This template is configured with some default values, please make sure to updated what's necessary on [config.ts](lib/config.ts).
 
+### Environment Variables
+
+This template uses environment-specific configuration files:
+
+- **`.env.example`**: Template for local development environment variables. Copy to `.env.local` for local development.
+- **`.env.production.example`**: Template for production environment variables. Copy to `.env.production` for production builds.
+- **`.env.preview.example`**: Template for preview/staging environment variables. Copy to `.env.preview` for preview builds.
+
+The CI workflow automatically uses the appropriate environment file:
+- **Production builds** (pushes to main branch) use `.env.production`
+- **Preview builds** (pull requests) use `.env.preview`
+
+For Vercel deployments, you can configure environment variables in your project settings under **Settings > Environment Variables**, where you can set different values for Production, Preview, and Development environments.
+
 
 This templates also includes the following:
 * state management with [Redux](https://redux.js.org/) and [Redux-saga](https://redux-saga.js.org/).

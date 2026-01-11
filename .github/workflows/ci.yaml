@@ -26,5 +26,19 @@ jobs:
       - name: install dependencies
         run: yarn install
       
+      - name: setup environment variables
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "Setting up preview environment"
+            if [ -f .env.preview.example ]; then
+              cp .env.preview.example .env.preview
+            fi
+          else
+            echo "Setting up production environment"
+            if [ -f .env.production.example ]; then
+              cp .env.production.example .env.production
+            fi
+          fi
+      
       - name: build
         run: yarn build
