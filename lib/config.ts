@@ -15,4 +15,5 @@ export const AppConfig = {
     signOutRedirectUrl: "/", // redirect to this url after logout
     signInPage: "/auth/login", // login page
   },
+  maintenanceMode: process.env.MAINTENANCE_MODE === "true",
 }
