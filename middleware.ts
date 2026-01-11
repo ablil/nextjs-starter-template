@@ -3,6 +3,8 @@ import { withAuth } from "next-auth/middleware"
 
 export default withAuth(
   function middleware(req) {
+    // Read maintenance mode from environment variable at runtime
+    // This allows toggling maintenance mode without rebuilding the application
     const isMaintenanceMode = process.env.MAINTENANCE_MODE === "true"
     const isMaintenancePage = req.nextUrl.pathname === "/maintenance"
 
@@ -36,6 +38,11 @@ export default withAuth(
 )
 
 export const config = {
-  // specify the route you want to protect
+  // Match all routes except:
+  // - api routes
+  // - _next/static (static files)
+  // - _next/image (image optimization)
+  // - favicon.ico
+  // - files with extensions (e.g., .png, .jpg, .svg)
   matcher: ["/((?!api|_next/static|_next/image|favicon.ico|.*\\..*).*)"],
 }
