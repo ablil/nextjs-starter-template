@@ -32,7 +32,6 @@
     "@types/react-toastify": "^4.1.0",
     "eslint": "^9",
     "eslint-config-next": "^16.1.1",
-    "eslint-config-prettier": "^10.1.8",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.1",
     "postcss": "^8",
