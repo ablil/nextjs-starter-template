@@ -5,7 +5,7 @@ import React, { FC, PropsWithChildren, useRef } from "react"
 import { Provider } from "react-redux"
 
 const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
-  const storeRef = useRef<AppStore>()
+  const storeRef = useRef<AppStore>(undefined)
   if (!storeRef.current) {
     storeRef.current = makeStore()
     storeRef.current.dispatch(InitializeAppAction())
