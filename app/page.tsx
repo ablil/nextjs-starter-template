@@ -1,3 +1,4 @@
+import { ThemeToggle } from "@/components/common/theme-provider"
 import { MoveRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -43,6 +44,7 @@ export default function Home() {
           </div>
         ))}
       </div>
+      <ThemeToggle />
     </div>
   )
 }
