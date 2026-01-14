@@ -1,4 +1,3 @@
-import PageLoader from "@/components/common/PageLoader"
 import { AppConfig } from "@/lib/config"
 import type { Metadata } from "next"
 import localFont from "next/font/local"
@@ -37,9 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <StoreProvider>
-          <PageLoader>{children}</PageLoader>
-        </StoreProvider>
+        <StoreProvider>{children}</StoreProvider>
       </body>
     </html>
   )

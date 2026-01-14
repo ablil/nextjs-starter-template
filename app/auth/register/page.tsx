@@ -1,5 +1,5 @@
-import InputWithIcon from "@/components/common/InputWithIcon"
-import { AtSign, Lock, User } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 
 export default function RegisterPage() {
   return (
@@ -7,33 +7,13 @@ export default function RegisterPage() {
       <header className="bigtitle text-center">sign up</header>
       <main>
         <div className="grid grid-rows-5 gap-4 my-8">
-          <InputWithIcon
-            leftIcon={<User className="size-4" />}
-            placeholder="first name"
-            className="bordered filled"
-          />
-          <InputWithIcon
-            leftIcon={<User className="size-4" />}
-            placeholder="last name"
-            className="bordered filled"
-          />
-          <InputWithIcon
-            leftIcon={<AtSign className="size-4" />}
-            placeholder="email name"
-            type="email"
-            className="bordered filled"
-            required={true}
-          />
-          <InputWithIcon
-            leftIcon={<Lock className="size-4" />}
-            placeholder="password"
-            type="password"
-            className="bordered filled"
-            required={true}
-          />
-          <button type="submit" className="filled" disabled={true}>
+          <Input placeholder="first name" />
+          <Input placeholder="last name" />
+          <Input placeholder="email" type="email" />
+          <Input placeholder="****" type="password" />
+          <Button type="submit" disabled={true}>
             sign up
-          </button>
+          </Button>
         </div>
       </main>
       <footer className="undertitle text-center">

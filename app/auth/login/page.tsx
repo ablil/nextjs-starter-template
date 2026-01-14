@@ -1,7 +1,7 @@
 "use client"
-import InputWithIcon from "@/components/common/InputWithIcon"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import { AppConfig } from "@/lib/config"
-import { Lock, User } from "lucide-react"
 import { signIn } from "next-auth/react"
 import { useRouter } from "next/navigation"
 import { FormEventHandler, useMemo, useState } from "react"
@@ -42,31 +42,22 @@ export default function LoginPage() {
       <main>
         <div className="grid grid-rows-3 gap-4 my-8">
           <div>
-            <InputWithIcon
-              leftIcon={<User className="size-4" />}
+            <Input
               placeholder="username or email"
-              required={true}
-              name="username"
-              value={formData.username}
-              onChange={(evt) => setFormData({ ...formData, username: evt.target.value })}
-              className="bordered filled"
+              onChange={(e) => setFormData({ ...formData, username: e.target.value })}
             />
           </div>
 
           <div>
-            <InputWithIcon
-              leftIcon={<Lock className="size-4" />}
+            <Input
               type="password"
-              placeholder="password"
-              name="password"
-              value={formData.password}
+              placeholder="***"
               onChange={(evt) => setFormData({ ...formData, password: evt.target.value })}
-              className="bordered filled"
             />
           </div>
-          <button className="filled" type="submit" disabled={formDisabled}>
+          <Button type="submit" disabled={formDisabled}>
             sign in
-          </button>
+          </Button>
         </div>
       </main>
       <footer className="undertitle text-center">

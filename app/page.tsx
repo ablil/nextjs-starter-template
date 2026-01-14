@@ -8,10 +8,6 @@ const routes = [
     link: "/",
   },
   {
-    title: "UI components",
-    link: "/components",
-  },
-  {
     title: "home",
     link: "/home",
   },
