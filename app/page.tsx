@@ -1,4 +1,4 @@
-import { ArrowRightStartOnRectangleIcon } from "@heroicons/react/16/solid"
+import { MoveRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -42,7 +42,7 @@ export default function Home() {
           <div key={route.link}>
             <Link href={route.link} className="flex items-center gap-2">
               <span>{route.title}</span>
-              <ArrowRightStartOnRectangleIcon className="size-4" />
+              <MoveRight className="size-4" />
             </Link>
           </div>
         ))}

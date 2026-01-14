@@ -1,5 +1,5 @@
 "use client"
-import { ArrowUpIcon } from "@heroicons/react/16/solid"
+import { ChevronUp } from "lucide-react"
 import React, { useState, useEffect } from "react"
 
 const ScrollToTop: React.FC = () => {
@@ -31,7 +31,7 @@ const ScrollToTop: React.FC = () => {
         onClick={scrollToTop}
         className="fixed bottom-4 right-4 bg-black dark:bg-white text-white dark:text-black p-3 rounded-full shadow-lg transition"
       >
-        <ArrowUpIcon className="size-5" />
+        <ChevronUp className="size-5" />
       </button>
     )
   )

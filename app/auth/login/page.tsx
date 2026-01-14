@@ -1,7 +1,7 @@
 "use client"
 import InputWithIcon from "@/components/common/InputWithIcon"
 import { AppConfig } from "@/lib/config"
-import { LockClosedIcon, UserIcon } from "@heroicons/react/16/solid"
+import { Lock, User } from "lucide-react"
 import { signIn } from "next-auth/react"
 import { useRouter } from "next/navigation"
 import { FormEventHandler, useMemo, useState } from "react"
@@ -43,7 +43,7 @@ export default function LoginPage() {
         <div className="grid grid-rows-3 gap-4 my-8">
           <div>
             <InputWithIcon
-              leftIcon={<UserIcon className="size-4" />}
+              leftIcon={<User className="size-4" />}
               placeholder="username or email"
               required={true}
               name="username"
@@ -55,7 +55,7 @@ export default function LoginPage() {
 
           <div>
             <InputWithIcon
-              leftIcon={<LockClosedIcon className="size-4" />}
+              leftIcon={<Lock className="size-4" />}
               type="password"
               placeholder="password"
               name="password"

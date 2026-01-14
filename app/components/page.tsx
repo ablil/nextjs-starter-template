@@ -3,38 +3,39 @@ import InputWithIcon from "@/components/common/InputWithIcon"
 import ScrollToTop from "@/components/common/ScrollToTop"
 import SidebarNavigation, { NavigationRoute } from "@/components/common/SidebarNavigation"
 import {
-  AcademicCapIcon,
-  ArchiveBoxArrowDownIcon,
-  ArrowLeftEndOnRectangleIcon,
-  ArrowRightCircleIcon,
-  AtSymbolIcon,
-  BeakerIcon,
-  ClipboardIcon,
-  CreditCardIcon,
-  HomeIcon,
-  MagnifyingGlassIcon,
-} from "@heroicons/react/16/solid"
-import React from "react"
+  Archive,
+  AtSign,
+  ChevronLast,
+  ChevronLeft,
+  ChevronRight,
+  Clipboard,
+  CreditCard,
+  GraduationCap,
+  House,
+  Scale,
+  Search,
+  SearchCode,
+} from "lucide-react"
 
 const sidebarRoutes: NavigationRoute[] = [
-  { label: "home", href: "/home", icon: <HomeIcon className="size-5" /> },
-  { label: "about", href: "/about", icon: <ArchiveBoxArrowDownIcon className="size-5" /> },
+  { label: "home", href: "/home", icon: <House className="size-5" /> },
+  { label: "about", href: "/about", icon: <Archive className="size-5" /> },
   {
     label: "components",
     href: "/components",
-    icon: <BeakerIcon className="size-5" />,
+    icon: <Scale className="size-5" />,
     subroutes: [
       {
         label: "inputs",
         href: "/components/inputs",
-        icon: <MagnifyingGlassIcon className="size-5" />,
+        icon: <SearchCode className="size-5" />,
       },
-      { label: "button", href: "/components/buttons", icon: <ClipboardIcon className="size-5" /> },
-      { label: "titles", href: "/components/titles", icon: <CreditCardIcon className="size-5" /> },
+      { label: "button", href: "/components/buttons", icon: <Clipboard className="size-5" /> },
+      { label: "titles", href: "/components/titles", icon: <CreditCard className="size-5" /> },
     ],
   },
-  { label: "contact", href: "/contact", icon: <AcademicCapIcon className="size-5" /> },
-  { label: "faq", href: "/faq", icon: <AtSymbolIcon className="size-5" /> },
+  { label: "contact", href: "/contact", icon: <GraduationCap className="size-5" /> },
+  { label: "faq", href: "/faq", icon: <AtSign className="size-5" /> },
 ]
 
 const ComponentsPage = () => {
@@ -57,40 +58,22 @@ const ComponentsPage = () => {
             outlined disabled
           </button>
 
-          <ButtonWithIcon
-            rightIcon={<ArrowRightCircleIcon className="size-4" />}
-            className="filled"
-          >
+          <ButtonWithIcon rightIcon={<ChevronRight className="size-4" />} className="filled">
             sign in
           </ButtonWithIcon>
-          <ButtonWithIcon
-            leftIcon={<ArrowLeftEndOnRectangleIcon className="size-4" />}
-            className="filled"
-          >
+          <ButtonWithIcon leftIcon={<ChevronLast className="size-4" />} className="filled">
             sign out
           </ButtonWithIcon>
-          <ButtonWithIcon
-            rightIcon={<ArrowRightCircleIcon className="size-4" />}
-            className="outlined"
-          >
+          <ButtonWithIcon rightIcon={<ChevronLeft className="size-4" />} className="outlined">
             sign in
           </ButtonWithIcon>
-          <ButtonWithIcon
-            leftIcon={<ArrowLeftEndOnRectangleIcon className="size-4" />}
-            className="outlined"
-          >
+          <ButtonWithIcon leftIcon={<ChevronRight className="size-4" />} className="outlined">
             sign out
           </ButtonWithIcon>
-          <ButtonWithIcon
-            rightIcon={<ArrowRightCircleIcon className="size-4" />}
-            className="transparent"
-          >
+          <ButtonWithIcon rightIcon={<ChevronRight className="size-4" />} className="transparent">
             sign in
           </ButtonWithIcon>
-          <ButtonWithIcon
-            leftIcon={<ArrowLeftEndOnRectangleIcon className="size-4" />}
-            className="transparent"
-          >
+          <ButtonWithIcon leftIcon={<ChevronLast className="size-4" />} className="transparent">
             sign out
           </ButtonWithIcon>
         </div>
@@ -105,42 +88,42 @@ const ComponentsPage = () => {
           <InputWithIcon
             placeholder="underlined left icon"
             className="underlined"
-            leftIcon={<MagnifyingGlassIcon className="size-4" />}
+            leftIcon={<Search className="size-4" />}
           />
           <InputWithIcon
             placeholder="underlined right icon"
             className="underlined"
-            rightIcon={<MagnifyingGlassIcon className="size-4" />}
+            rightIcon={<Search className="size-4" />}
           />
           <InputWithIcon
             placeholder="underlined filled left icon"
             className="underlined filled"
-            leftIcon={<MagnifyingGlassIcon className="size-4" />}
+            leftIcon={<Search className="size-4" />}
           />
           <InputWithIcon
             placeholder="underlined filled right icon"
             className="underlined filled"
-            rightIcon={<MagnifyingGlassIcon className="size-4" />}
+            rightIcon={<Search className="size-4" />}
           />
           <InputWithIcon
             placeholder="bordered left icon"
             className="bordered"
-            leftIcon={<MagnifyingGlassIcon className="size-4" />}
+            leftIcon={<Search className="size-4" />}
           />
           <InputWithIcon
             placeholder="bordered right icon"
             className="bordered"
-            rightIcon={<MagnifyingGlassIcon className="size-4" />}
+            rightIcon={<Search className="size-4" />}
           />
           <InputWithIcon
             placeholder="bordered filled left icon"
             className="bordered filled"
-            leftIcon={<MagnifyingGlassIcon className="size-4" />}
+            leftIcon={<Search className="size-4" />}
           />
           <InputWithIcon
             placeholder="bordered filled right icion"
             className="bordered filled"
-            rightIcon={<MagnifyingGlassIcon className="size-4" />}
+            rightIcon={<Search className="size-4" />}
           />
         </div>
         <h1 className="uppercase text-xl">titles</h1>

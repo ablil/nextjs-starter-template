@@ -1,5 +1,5 @@
 import InputWithIcon from "@/components/common/InputWithIcon"
-import { AtSymbolIcon, LockClosedIcon, UserIcon } from "@heroicons/react/16/solid"
+import { AtSign, Lock, User } from "lucide-react"
 
 export default function RegisterPage() {
   return (
@@ -8,24 +8,24 @@ export default function RegisterPage() {
       <main>
         <div className="grid grid-rows-5 gap-4 my-8">
           <InputWithIcon
-            leftIcon={<UserIcon className="size-4" />}
+            leftIcon={<User className="size-4" />}
             placeholder="first name"
             className="bordered filled"
           />
           <InputWithIcon
-            leftIcon={<UserIcon className="size-4" />}
+            leftIcon={<User className="size-4" />}
             placeholder="last name"
             className="bordered filled"
           />
           <InputWithIcon
-            leftIcon={<AtSymbolIcon className="size-4" />}
+            leftIcon={<AtSign className="size-4" />}
             placeholder="email name"
             type="email"
             className="bordered filled"
             required={true}
           />
           <InputWithIcon
-            leftIcon={<LockClosedIcon className="size-4" />}
+            leftIcon={<Lock className="size-4" />}
             placeholder="password"
             type="password"
             className="bordered filled"
